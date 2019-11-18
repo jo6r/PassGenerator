@@ -1,0 +1,35 @@
+plugins {
+    id 'groovy'
+    id 'java'
+    id 'idea'
+    id 'application'
+    id "edu.sc.seis.launch4j" version "2.4.4"
+}
+
+group 'PassGenerator'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'PassGeneratorMain'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.13'
+
+    //https://bintray.com/groovyfx/maven/groovyfx
+    compile 'org.groovyfx:groovyfx:8.0.0'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+}
+
+launch4j {
+    mainClassName = 'PassGenerator'
+    icon = "${projectDir}/src/main/resources/myApp_125x125.ico"
+}
